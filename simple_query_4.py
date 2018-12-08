@@ -14,23 +14,19 @@ print("Max (Uid 3) adds Alex (Uid 4) as a friend and Alex adds him back.")
 def add_friend(user1, user2):
     query = '''
         INSERT INTO Friends
-        VALUES(%s,%s)    
-        '''
-    cmd = cur.mogrify(query, [user1, user2])
-    
-    query = '''
+        VALUES(%s,%s);
+        
         INSERT INTO Friends
-        VALUES(%s,%s)
+        Values(%s,%s);  
         '''
-    cmd = cur.mogrify(query, [user2, user1])
-    
+    cmd = cur.mogrify(query, [user1, user2, user2, user1])
     cur.execute(cmd)
     rows = cur.fetchall()
     return rows[0][0]
     
 
-def main():
-   user1 = 3
-   user2 = 4
+if __name__ == "__main__":
+   user1 = 1
+   user2 = 2
    add_friend(user1,user2) 
 
