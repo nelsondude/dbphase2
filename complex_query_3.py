@@ -16,7 +16,7 @@ query = '''
            LEFT JOIN Businesses as b on b.u_id = t.t_id
            JOIN Individuals as i on i.u_id = t.t_id
      WHERE (t.timestamp between '2013-07-01' and '2015-11-10') AND
-           (b.biz_name = 'Walmart' or i.username = 'test');
+           (b.biz_name = 'Starbucks' or i.username = 'test');
 '''
 cur.execute(query)
 rows = cur.fetchall()
