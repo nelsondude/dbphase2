@@ -10,9 +10,9 @@ cur = con.cursor()
 # View user profile information
 # Update username for individuals only
 
+print("Changed user 5's username from ASpahn to AnnieS")
 
 def view_profile(username):
-    print("running")
     query = '''
         SELECT *
           FROM User_Info
@@ -37,7 +37,6 @@ def update_profile(new_username, old_username):
     #return rows[0][0]
 
 def main():
-    print("start")
     username = 'AnnieS'
     new_username = 'ASpahn'
     view_profile(username)
