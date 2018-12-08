@@ -1,7 +1,10 @@
 """
 See which bank accounts need to be charged overage fees and by how much
 """
-
+print("")
+print("All overdrawn accounts: ")
+print("")
+print("(Account No, Overage)")
 
 import psycopg2 as pg2
 
