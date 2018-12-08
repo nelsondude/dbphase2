@@ -200,7 +200,7 @@ ALTER TABLE Transfers ADD CONSTRAINT User_Accounts_Transfers
 -- Reference: User_Info_IDTable (table: Individuals)
 ALTER TABLE Individuals ADD CONSTRAINT User_Info_IDTable
     FOREIGN KEY (username)
-    REFERENCES User_Info (username)  
+    REFERENCES User_Info (username) ON UPDATE CASCADE
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
