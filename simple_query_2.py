@@ -9,6 +9,8 @@ con = pg2.connect(database='venmo', user='isdb')
 con.autocommit = True
 cur = con.cursor()
 
+
+print('Story 2: see all venmo withdrawals and transfers')
 query = '''
 SELECT abs(amount),
        CASE
@@ -21,5 +23,8 @@ SELECT abs(amount),
 '''
 cur.execute(query)
 rows = cur.fetchall()
-for row in rows:
-    print(row)
+if rows:
+    for row in rows:
+        print(row)
+else:
+    print('No transfers found')

@@ -32,9 +32,10 @@ CREATE TABLE Businesses (
 
 -- Table: Comments
 CREATE TABLE Comments (
+    comment_id serial NOT NULL,
     transaction_id int  NOT NULL,
     text text  NOT NULL,
-    CONSTRAINT Comments_pk PRIMARY KEY (transaction_id)
+    CONSTRAINT Comments_pk PRIMARY KEY (comment_id)
 );
 
 -- Table: Friends

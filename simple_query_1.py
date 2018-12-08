@@ -11,11 +11,11 @@ print('Story 1: Annie (Uid 5) Pays starbucks 50 dollars')
 print('')
 
 query = '''
-INSERT INTO Transactions(transaction_id, u_id, t_id, timestamp)
-VALUES (1, 5, 2, current_timestamp); 
+INSERT INTO Transactions
+VALUES (2, 5, 2, current_timestamp); 
 
 INSERT INTO Payments(transaction_id, amount)
-VALUES (1, 50); 
+VALUES (2, 50); 
 '''
 cur.execute(query)
 
@@ -27,9 +27,9 @@ print('')
 #Make a transaction and approve it 
 query = '''
 INSERT INTO Transactions(transaction_id, u_id, t_id, timestamp)
-VALUES (2, 5, 3, current_timestamp);
+VALUES (3, 5, 3, current_timestamp);
 INSERT INTO Requests(transaction_id, amount, approved)
-VALUES (2, 5.50, False);
+VALUES (3, 5.50, False);
 UPDATE Requests SET approved = True WHERE transaction_id = 2;'''
 
 cur.execute(query)
