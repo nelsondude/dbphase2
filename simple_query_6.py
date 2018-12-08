@@ -2,7 +2,7 @@ import psycopg2 as pg2
 
 
 # Connect to an existing database
-con = pg2.connect(database='postgres', user='isdb')
+con = pg2.connect(database='venmo', user='isdb')
 con.autocommit = True
 # Open a cursor to perform database operations
 cur = con.cursor()
